@@ -116,7 +116,7 @@
   
 
   <div id="input-container" onsubmit="return preventReload()">
-    <input type="Text" id="user-input" placeholder="Hey, What's Up? ">
+    <input type="Text" id="user-input" placeholder="Hey, What's Up?" onkeydown="handleKeyPress(event)" autocomplete="off"/>
     <button id="send-button" onclick="sendMessage()">Send</button>
   </div>
 
