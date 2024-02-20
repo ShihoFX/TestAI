@@ -1,3 +1,4 @@
+const container = document.getElementById('container');
 const chatContainer = document.getElementById('chat-container');
 const userInput = document.getElementById('user-input');
 
@@ -37,7 +38,7 @@ function appendMessage(sender, message) {
     chatContainer.appendChild(messageElement);
 
     // Scroll to the bottom to show the latest message.
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    container.scrollTop = container.scrollHeight;
 }
 
 function getBotResponse(userMessage) {
