@@ -8,6 +8,11 @@ function handleKeyPress(event) {
     }
   }
 
+  function scrollToBottom() {
+    var container = document.getElementById('container');
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
 function sendMessage() {
     const userMessage = userInput.value.trim();
 
@@ -22,7 +27,10 @@ function sendMessage() {
         // Simulate a delay before the bot responds.
         setTimeout(() => {
             appendMessage('bot', botResponse);
+            scrollToBottom();
         }, 1000);
+
+        
     }
 }
 
