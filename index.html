@@ -13,16 +13,16 @@
       height: 90vh;
       transition: background-color 0.3s ease;
       max-width: 100vw;
-      height: 100vh;
-
+      height: 100px;
+      overflow-y: scroll;
     }
 
-    .header {
+    #header {
       width: 100vw;
       position: fixed;
       left: 0;
       top: 0;
-      background-color: #f5f5f5;
+      transition: background-color 0.3s ease;
       padding: 1rem;
       display: flex;
       justify-content: end;
@@ -32,8 +32,8 @@
       flex: 1;
       left: 0;
       width: 100%;
-      height: fit-content;
       margin: 4rem auto;
+      margin-top: 4rem;
       display: flex;
       flex-direction: column;
       justify-content: end;
@@ -126,7 +126,7 @@
   </style>
 </head>
 <body id="container">
-    <div class="header">
+    <div id="header">
       <div id="dark-mode-toggle" onclick="toggleDarkMode()">
         <img id="dark-mode-icon" src="sun.svg" alt="Dark Mode">
       </div>
@@ -150,12 +150,18 @@
     
     function toggleDarkMode() {
       const body = document.getElementById('container');
+      const header= document.getElementById('header');
+      const inputContainer = document.getElementById('input-container');
       const darkModeIcon = document.getElementById('dark-mode-icon');
 
       if(body.classList.contains('dark-mode')) {
           body.classList.remove('dark-mode');
+          header.classList.remove('dark-mode');
+          inputContainer.classList.remove('dark-mode');
       }else {
+          header.classList.add('dark-mode');
           body.classList.add('dark-mode');
+          inputContainer.classList.add('dark-mode');
       }
       
       
