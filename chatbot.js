@@ -44,9 +44,6 @@ function appendMessage(sender, message) {
       messageElement.innerHTML = `<div class="bot-message">${message}</div>`;
     };
     chatContainer.appendChild(messageElement);
-
-    // Scroll to the bottom to show the latest message.
-    container.scrollTop = container.scrollHeight;
 }
 
 function getBotResponse(userMessage) {
